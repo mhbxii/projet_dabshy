@@ -1,0 +1,41 @@
+<html>
+<head>
+</head>
+<body>
+    <div class="profile-container">
+        <div class="sidebar">
+            <img src="{{user.profileImageUrl}}" alt="Profile Picture" class="avatar">
+            <button routerLink="/addArticle">Add Product</button>
+            <button
+  routerLink="/editProfile'"
+  [queryParams]="{
+    image: user.profileImageUrl,
+    name: user.userName,
+    mail: user.userEmail,
+    phone: user.userPhoneNumber,
+    location: user.userRegion
+  }"
+>
+  Edit Profile
+</button>
+            <button (click)="logMeOut()">Log Out</button>
+        </div>
+        <div class="info-section">
+            <h2>{{user.userName}}</h2>
+            <h3>Personal Info</h3>
+            <p><strong>E-mail:</strong> {{user.userEmail}}</p>
+            <p><strong>Phone:</strong> {{user.userPhoneNumber}}</p>
+            <p><strong>Location:</strong> {{user.userRegion}}</p>
+            <h3>Products</h3>
+        </div>
+
+    </div>
+
+    
+
+
+
+
+
+</body>
+</html>

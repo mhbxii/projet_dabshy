@@ -1,0 +1,16 @@
+<span class="humbergerBtn" (click)="popUpFilter()"></span>
+    <div class="filterDiv" [class.visible]="isFilterVisible">
+        <app-filter></app-filter>
+    </div>
+<div class="container" [class.blurred]="isFilterVisible">
+    <div class="listArticles">
+        <app-article *ngFor="let article of articleSlice" [article]="article" (click)="onArticleClick(article)"></app-article>
+        <div class="navigationContainer">
+            <button type="button" class="navigation leftBtn" (click)="getPrevIndexSlice()" [disabled]="indexStart === 0"><b>&lt;</b></button>
+            <button type="button" class="navigation pageIndex" *ngFor="let page of indexSlice" (click)="getSlice(page-1)" [disabled]="sliceStart === (page-1)*sliceLength">
+                {{ page }}
+            </button>
+            <button type="button" class="navigation rightBtn" (click)="getNextIndexSlice()" [disabled]="indexStart+indexSliceLength >= pageIndices.length"><b>&gt;</b></button>
+        </div>
+    </div>
+</div>

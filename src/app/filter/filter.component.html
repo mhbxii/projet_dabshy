@@ -1,0 +1,41 @@
+<div class="north">
+    <div class="searchbar">
+        <input type="text" name="" id="" placeholder="search...">
+        <button type="button"></button>
+    </div>
+    <form class="filter" (ngSubmit)="applyFilter()">
+        <p style="font-weight: 900;">Filter :</p>
+        <div class="minmax">
+            <input type="text" placeholder="min">
+            <input type="text" placeholder="max">
+        </div>
+        <select name="" id="">
+            <option value="0">Sort :</option>
+            <option value="1">prix croissant</option>
+            <option value="2">prix decroissant</option>
+            <option value="1">plus recent</option>
+            <option value="2">moins recent</option>
+        </select>
+        <select name="" id="">
+            <option value="0">All Regions :</option>
+            <option *ngFor="let i of region" [value]="i"> {{ i }} </option>
+        </select>
+        <select>
+            <option value="0">All Categories :</option>
+            <ng-container *ngFor="let category of categories">
+              <optgroup [label]="category.type">
+                <option *ngFor="let item of category.items">{{ item }}</option>
+              </optgroup>
+            </ng-container>
+        </select>
+          
+        <div class="checkbox">
+            <input type="radio" name="a" id="man">man
+            <input type="radio" name="a" id="woman">woman
+        </div>
+        <div class="btn">
+            <button type="submit" class="filterBtn">Filter</button>
+            <button type="reset" class="resetBtn">reset</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,17 @@
+<div class="container" *ngIf="article">
+    <div class="img-container">
+        <img [src]="article.articleImageUrls[0]" alt="*">
+    </div>
+    <div class="below">
+        <p style="color : red; font-size: 30px; font-weight: 900;"> {{ article.articlePrice }} </p>
+        <p class="articleName"> {{ article.articleName }} </p>
+        <div class="info">
+            <img [src]="article.articleOwnerProfilePic" alt="*">
+            <p [routerLink]="['profile', article.articleOwnerId]" style="color: rgb(92, 89, 89);"> {{ article.articleOwnerName }} </p>
+        </div>
+        <div class="info2">
+            <img src="assets/images/region2.svg" alt="*">
+            <p style="color: rgb(92, 89, 89);"> {{ article.articleOwnerRegion }} </p>
+        </div>
+    </div>
+</div>
