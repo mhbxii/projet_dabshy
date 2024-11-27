@@ -1,30 +1,35 @@
-::ng-deep app-nav-bar{
-    background-color: transparent;
-}
 
 .container{
-    height: 100vh;
+    height: 85vh;
+    margin-top: 8vh;
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: antiquewhite;
 }
 
 .description{
     background: #000000af;
     color: #fff;
-    height: 55%;
-    width: 50%;
+    height: max-content;
+    width: 40%;
     border-radius: 10px;
     text-align: center;
-    padding: 0.5vw 1vw;
+    padding: 1vh 1vw 2vh 1vw;
 
     display: flex;
     flex-direction: column;
-    gap: 1vw;
-    justify-content: space-evenly;
+    gap: 2vh;
     align-items: center;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1{
+    font-size: 40px;
 }
 
 .text{
@@ -49,11 +54,10 @@
 }
 
 .container {
-    /* Set up the background image and properties */
-    background-image: url('../../assets/images/moving-bg-2.jpg');
-    background-size: cover; /* Adjust if needed */
-    background-repeat: repeat-y; /* Repeat only vertically */
-    animation: moveUp 80s linear infinite; /* Infinite loop animation */
+    background-image: url('../../assets/images/tile5.png');
+    background-size: 100%;
+    background-repeat: repeat-y; 
+    animation: moveUp 20s linear infinite;
 }
 
 @keyframes moveUp {
@@ -62,5 +66,51 @@
     }
     to {
         background-position: 0 -100vh; /* Move the background up */
+    }
+}
+
+@media all and (max-width: 1500px){
+    .description{
+        width: 50%;
+        font-size: 16px;
+    }
+}
+
+@media all and (max-width: 1200px){
+    .description{
+        width: 60%;
+        font-size: 14px;
+    }
+}
+
+@media all and (max-width: 920px){
+    .description{
+        width: 70%;
+        font-size: 14px;
+    }
+}
+@media all and (max-width: 780px){
+    .description{
+        width: 75%;
+        font-size: 14px;
+    }
+}
+@media all and (max-width: 650px){
+    .description{
+        width: 80%;
+        font-size: 12px;
+        padding: 1vh 1vw;
+    }
+    h1{
+        font-size: 35px;
+    }
+}
+@media all and (max-width: 480px){
+    .description{
+        width: 90%;
+        font-size: 10px;
+    }
+    h1{
+        font-size: 30px;
     }
 }

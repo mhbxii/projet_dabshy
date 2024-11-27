@@ -100,6 +100,10 @@ background-color: #ddd;
     background-color: transparent;
 }
 
+.close{
+    background-image: url(../../assets/images/close.png);
+}
+
 @media all and (max-width: 1500px){
     .listArticles {
         grid-template-columns: repeat(auto-fill, minmax(18%, 1fr));

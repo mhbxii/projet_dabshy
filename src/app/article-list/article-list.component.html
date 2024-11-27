@@ -1,4 +1,4 @@
-<span class="humbergerBtn" (click)="popUpFilter()"></span>
+<span [class.close]="isFilterVisible" class="humbergerBtn" (click)="popUpFilter()"></span>
     <div class="filterDiv" [class.visible]="isFilterVisible">
         <app-filter></app-filter>
     </div>
